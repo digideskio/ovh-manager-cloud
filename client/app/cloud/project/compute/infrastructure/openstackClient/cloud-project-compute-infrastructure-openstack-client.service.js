@@ -10,6 +10,9 @@ class CloudProjectComputeInfrastructureOpenstackClientService {
     }
 
     setSession (session, term) {
+        if (!session) {
+            return;
+        }
         this.session = session;
         this.updateExpiresAt();
         if (!term) {
@@ -50,6 +53,9 @@ class CloudProjectComputeInfrastructureOpenstackClientService {
     }
 
     initWebSocket (session, term) {
+        if (!session) {
+            return;
+        }
         const defer = this.$q.defer();
         let pingTimer;
         this.ws = new WebSocket(session.websocket);

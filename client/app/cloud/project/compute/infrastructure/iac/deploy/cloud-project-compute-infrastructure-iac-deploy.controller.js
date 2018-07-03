@@ -15,37 +15,38 @@ class CloudProjectComputeInfrastructureIacDeployCtrl {
     $onInit () {
         this.serviceName = this.$stateParams.projectId;
         this.getMe();
-
         // Get guides
         this.OvhApiCloudProjectStack.v6().get({ serviceName: this.serviceName, stackId: this.StackID }).$promise.then(stack => {
             this.stack = stack;
             this.guides = stack.instructions;
-
-            var i;
-            for (i = 0; i < this.guides.length; i++) {
-              if (this.guides[i].language == this.me.language) {
-                  this.guide = this.guides[i];
-              }
-
-              // Default is en_US
-              if (this.guides[i].language == "en_US") {
-                this.defaultGuide = this.guides[i];
-              }
+            this.guide = _.find(this.guides, guide => guide.language == this.me.language);
+            // Default is en_US
+            if (!this.guide) {
+                this.guide = _.find(this.guides, guide => guide.language == "en_US");
             }
-
-            if (this.guide == undefined) {
-              this.guide = this.defaultGuide;
+            if (!this.guide) {
+                this.guide = this.defaultGuide;
             }
+            if (this.$stateParams.hTerm.session) {
+                return;
+            }
+            return this.OvhApiCloudProjectStack.v6().client({ serviceName: this.serviceName, stackId: stack.uuid }).$promise.then(session =>
+                this.$state.go(".", {
+                    hTerm: {
+                        session
+                    }
+                })
+            );
         })
-        .catch(this.ServiceHelper.errorHandler("cpciiac_view_deployment_ERROR"));
+            .catch(this.ServiceHelper.errorHandler("cpciiac_view_deployment_ERROR"));
 
     }
 
-    getMe() {
+    getMe () {
         this.User.v6().get().$promise.then(me => {
             this.me = me;
         })
-        .catch(this.ServiceHelper.errorHandler("cpciiac_view_deployment_ERROR"));
+            .catch(this.ServiceHelper.errorHandler("cpciiac_view_deployment_ERROR"));
     }
 
     cancel () {
