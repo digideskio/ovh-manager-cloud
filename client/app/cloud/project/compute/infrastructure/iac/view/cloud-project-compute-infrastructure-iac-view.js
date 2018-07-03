@@ -7,7 +7,7 @@ angular.module("managerApp").config($stateProvider => {
             cloudProjectComputeInfrastructure: {
                 templateUrl: "app/cloud/project/compute/infrastructure/iac/view/cloud-project-compute-infrastructure-iac-view.html",
                 controller: "CloudProjectComputeInfrastructureIacViewCtrl",
-                controllerAs: "$ctrl"
+                controllerAs: "ViewCtl"
             }
         },
         translations: ["common"]

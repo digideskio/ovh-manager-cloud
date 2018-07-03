@@ -28,26 +28,10 @@ class CloudProjectComputeInfrastructureIacViewCtrl {
         .catch(this.ServiceHelper.errorHandler("cpciiac_view_general_ERROR"));
     }
 
-    deployStack(stack) {
-      const actions = {};
-      _.forEach(_.get(stack, "commands"), action => {
-          if (action.name && action.command) {
-              actions[action.name] = action.command;
-          }
+    viewStack(stack) {
+      return this.$state.go("iaas.pci-project.compute.infrastructure.iac-deploy", {
+          stackId: stack.uuid
       });
-
-      return this.OvhApiCloudProjectStack.v6().client({ serviceName: this.serviceName, stackId: stack.uuid }).$promise
-          .then(session => {
-              this.$state.go("iaas.pci-project.compute.infrastructure.iac-deploy", {
-                  hTerm: {
-                      session,
-                      actions
-                      //region: _.get(this.model, "region.microRegion.code")
-                  },
-                  stackId: stack.uuid
-              });
-          })
-          .catch(this.ServiceHelper.errorHandler("cpciiac_view_deployment_ERROR"));
     }
 }
 
