@@ -250,13 +250,6 @@
   version "3.0.5"
   resolved "https://codeload.github.com/ovh-ux/ovh-angular-jsplumb/tar.gz/f63fae6bb7a2750f64a2938eb148dd0088891cec"
 
-"@bower_components/ovh-angular-list-view@ovh-ux/ovh-angular-list-view#^0.1.5":
-  version "0.1.5"
-  resolved "https://codeload.github.com/ovh-ux/ovh-angular-list-view/tar.gz/b1f6bab92170041652ac340324dbe0d0847e0013"
-  dependencies:
-    angular-mock "^1.0.0"
-    less-plugin-remcalc "^0.0.1"
-
 "@bower_components/ovh-angular-otrs@ovh-ux/ovh-angular-otrs#^6.1.1":
   version "6.1.1"
   resolved "https://codeload.github.com/ovh-ux/ovh-angular-otrs/tar.gz/8a49021ab3ec36e0a7f5ecc288bbbc0cc5c10da9"
@@ -631,10 +624,6 @@ alter@~0.2.0:
 amdefine@>=0.0.4:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
-
-angular-mock@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/angular-mock/-/angular-mock-1.0.0.tgz#67431849bf0add225b1d49e0a771659a4b360ba5"
 
 angular-sanitize@1.3.x:
   version "1.3.20"

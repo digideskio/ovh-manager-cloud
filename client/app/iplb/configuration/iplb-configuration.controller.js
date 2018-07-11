@@ -23,6 +23,7 @@ class IpLoadBalancerConfigurationCtrl {
         this.zones.load()
             .then(() => {
                 this.startPolling();
+                console.log(this.zones);
             });
 
         this.selectedZones = [];

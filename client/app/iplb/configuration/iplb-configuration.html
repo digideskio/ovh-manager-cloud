@@ -9,7 +9,7 @@
         data-ng-disabled="!ctrl.selectedZones.length"></button>
 
     <oui-spinner data-ng-show="ctrl.zones.loading"></oui-spinner>
-    <oui-table data-ng-hide="ctrl.zones.loading"
+    <oui-datagrid data-ng-hide="ctrl.zones.loading"
         rows="ctrl.zones.data"
         on-selection-change="ctrl.onSelectionChange($selection)">
         <column title="'iplb_configuration_datacenter' | translate" property="name" sortable="asc"></column>
@@ -23,5 +23,5 @@
             class="oui-table__cell_action oui-table__cell_action-menu"
             template="ctrl.actionTemplate()">
         </column>
-    </oui-table>
+    </oui-datagrid>
 </section>

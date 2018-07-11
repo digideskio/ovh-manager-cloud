@@ -23,7 +23,6 @@ angular.module("managerApp", [
     "ovh-angular-toaster",
     "ovh-angular-swimming-poll",
     "oui",
-    "oui.list-view",
     "chart.js",
 
     "ovh-angular-pagination-front",
@@ -72,45 +71,6 @@ angular.module("managerApp", [
     })
     .config(function (OtrsPopupProvider, REDIRECT_URLS) {
         OtrsPopupProvider.setBaseUrlTickets(_.get(REDIRECT_URLS, "support", null));
-    })
-    .config(ouiTableConfigurationProvider => {
-        ouiTableConfigurationProvider.setCssConfig({
-            tablePanel: "oui-table-panel",
-            table: "oui-table oui-table_responsive",
-            thead: "oui-table__headers",
-            tbody: "oui-table__body",
-            tr: "oui-table__row cui-dropdown-menu-container",
-            th: "oui-table__header",
-            td: "oui-table__cell",
-            sortable: "oui-table__cell_sortable oui-table__cell_sortable-asc",
-            sorted: "oui-table__cell_sorted",
-            sortableAsc: "oui-table__cell_sortable-asc",
-            sortableDesc: "oui-table__cell_sortable-desc",
-            closed: "oui-table__row_closed",
-            emptyTable: "oui-table-empty"
-        })
-            .setPageSize(10)
-            .setExpandButtonTemplate(`
-                <i role="button"
-                    class="oui-icon oui-icon-chevron-right oui-table__expand-button"></i>
-            `)
-            .setSelectorTemplate(`<div class="oui-checkbox">
-                <input class="oui-checkbox__input"
-                  id="{{$name}}"
-                  type="checkbox"
-                  data-ng-model="$value"
-                  data-ng-change="$onChange()">
-                <label class="oui-checkbox__label-container" for="{{$name}}">
-                  <span class="oui-checkbox__label">
-                    <span class="oui-checkbox__icon">
-                      <i class="oui-icon oui-icon-checkbox-unchecked" aria-hidden="true"></i>
-                      <i class="oui-icon oui-icon-checkbox-checked" aria-hidden="true"></i>
-                      <i class="oui-icon oui-icon-checkbox-checkmark" aria-hidden="true"></i>
-                    </span>
-                  </span>
-                </label>
-              </div>
-            `);
     })
     .run(($transitions,
           $translate,

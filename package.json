@@ -67,7 +67,6 @@
     "@bower_components/ovh-angular-form-flat": "ovh-ux/ovh-angular-form-flat#^3.2.2",
     "@bower_components/ovh-angular-jquery-ui-droppable": "ovh-ux/ovh-angular-jquery-ui-droppable#^0.1.1",
     "@bower_components/ovh-angular-jsplumb": "ovh-ux/ovh-angular-jsplumb#^3.0.5",
-    "@bower_components/ovh-angular-list-view": "ovh-ux/ovh-angular-list-view#^0.1.5",
     "@bower_components/ovh-angular-otrs": "ovh-ux/ovh-angular-otrs#^6.1.1",
     "@bower_components/ovh-angular-pagination-front": "ovh-ux/ovh-angular-pagination-front#^5.1.0",
     "@bower_components/ovh-angular-proxy-request": "ovh-ux/ovh-angular-proxy-request#^0.1.0",
