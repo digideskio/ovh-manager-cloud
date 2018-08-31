@@ -62,16 +62,6 @@
     <div data-ng-if="storage.shortcut !== 'pca'" data-ng-include="'app/cloud/project/storage/storage-details/pcs-table.html'"></div>
     <div data-ng-if="storage.shortcut === 'pca'" data-ng-include="'app/cloud/project/storage/storage-details/pca-table.html'"></div>
 
-    <div class="table-pretty-pagination"
-         data-ng-show="!loaders.details && !errors.notfound && !errors.notdefined && objects.length > 5"
-         data-pagination-front
-         data-items="objects"
-         data-paginated-items="files"
-         data-current-page="currentPage"
-         data-nb-pages="nbPages"
-         data-items-per-page="filesPerPage"
-         data-page-placeholder="{{ 'common_pagination_page' | translate:{currentPage: currentPage, nbPages : nbPages} }}"
-         data-item-per-page-placeholder="{{ 'common_pagination_display' | translate }}"></div>
-    </div>
+
 
 </section>
