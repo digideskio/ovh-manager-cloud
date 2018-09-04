@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<translations>
+    <translation id="cpc_tasks_name">Nom</translation>
+
+    <translation id="cpc_tasks_backups_error">Impossible de récupérer les tâches programmées : {{ message }}</translation>
+    <translation id="cpc_tasks_backups_instance_name_error">Impossible de récupérer le nom de la ressource associée</translation>
+
+    <translation id="cpc_tasks_resource">Ressource</translation>
+    <translation id="cpc_tasks_resource_select">Selectionnez une ressource</translation>
+    <translation id="cpc_tasks_resources">Ressources</translation>
+    <translation id="cpc_tasks_resources_help">Cette option n'est pas disponible dans toutes les régions pour le moment</translation>
+    <translation id="cpc_tasks_resources_error">Impossible de récupérer la liste des services éligibles</translation>
+
+    <translation id="cpc_tasks_schedule">Programme</translation>
+    <translation id="cpc_tasks_schedule_rotate7">Rotation 7</translation>
+    <translation id="cpc_tasks_schedule_rotate7_description">Une sauvegarde est effectuée quotidiennement. La première sauvegarde est remplacée par la huitième</translation>
+    <translation id="cpc_tasks_schedule_rotate14">Rotation 14</translation>
+    <translation id="cpc_tasks_schedule_rotate14_description">Une sauvegarde est effectuée quotidiennement. La première sauvegarde est remplacée par la quinzième</translation>
+    <translation id="cpc_tasks_schedule_custom">Personnalisé</translation>
+    <translation id="cpc_tasks_schedule_custom_description">Choisissez le cron et la rotation des sauvegardes</translation>
+    <translation id="cpc_tasks_schedule_time">Horaire de la sauvegarde</translation>
+    <translation id="cpc_tasks_schedule_time_help">Heure de la sauvegarde au format 24h</translation>
+    <translation id="cpc_tasks_schedule_cron">Motif cron</translation>
+    <translation id="cpc_tasks_schedule_cron_help"></translation>
+    <translation id="cpc_tasks_schedule_rotation">Rotation</translation>
+    <translation id="cpc_tasks_schedule_rotation_help"></translation>
+
+    <translation id="cpc_tasks_action">Action</translation>
+    <translation id="cpc_tasks_action_snapshot">Snapshot</translation>
+    <translation id="cpc_tasks_action_snapshot_description">Créer une sauvegarde automatisée d'une instance</translation>
+
+    <translation id="cpc_tasks_create">Créer une tâche</translation>
+    <translation id="cpc_tasks_create_error">Impossible de créer la tâche : {{ message }}</translation>
+
+    <translation id="cpc_tasks_delete_confirm">Êtes-vous certain de vouloir supprimer cette tâche ?</translation>
+    <translation id="cpc_tasks_delete_success">La tâche {{ name }} a été supprimée</translation>
+</translations>

@@ -7,7 +7,7 @@ angular.module("managerApp").config($stateProvider => {
             cloudProjectComputeInfrastructure: {
                 templateUrl: "app/cloud/project/compute/infrastructure/list/cloud-project-compute-infrastructure-list.html",
                 controller: "CloudProjectComputeInfrastructureListCtrl",
-                controllerAs: "ComputeInfrastructureListCtrl"
+                controllerAs: "$ctrl"
             }
         },
         translations: ["common", "cloud/project/billing/vouchers/addCredit"]

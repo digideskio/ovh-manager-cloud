@@ -1,15 +1,17 @@
 class CloudProjectComputeInfrastructureListCtrl {
-    constructor ($scope, $q, $stateParams, $translate, $timeout,
-                 CloudMessage, CloudNavigation, CloudProjectOrchestrator, CloudProjectComputeInfrastructureService,
+    constructor ($scope, $q, $state, $stateParams, $translate, $timeout,
+                 CloudMessage, CloudNavigation, CloudProjectOrchestrator, CloudProjectCompute, CloudProjectComputeInfrastructureService,
                  OvhApiCloudProjectVolume, RegionService, OvhApiCloudProjectFlavor, TARGET) {
         this.$scope = $scope;
         this.$q = $q;
         this.$timeout = $timeout;
+        this.$state = $state;
         this.$stateParams = $stateParams;
         this.$translate = $translate;
         this.CloudMessage = CloudMessage;
         this.CloudNavigation = CloudNavigation;
         this.CloudProjectOrchestrator = CloudProjectOrchestrator;
+        this.CloudProjectCompute = CloudProjectCompute;
         this.InfrastructureService = CloudProjectComputeInfrastructureService;
         this.OvhApiCloudProjectVolume = OvhApiCloudProjectVolume;
         this.RegionService = RegionService;
@@ -66,6 +68,8 @@ class CloudProjectComputeInfrastructureListCtrl {
         });
 
         this.InfrastructureService.setPreferredView("list");
+
+        this.getRegionsWithWorkflowServices();
 
         return this.initInfra();
     }
@@ -127,6 +131,19 @@ class CloudProjectComputeInfrastructureListCtrl {
             }
         }
     }
+
+    getRegionsWithWorkflowServices () {
+        return this.CloudProjectCompute.getRegionsWithWorkflowService(this.serviceName)
+            .then(regions => {
+                this.taskAvailableRegions = regions;
+            });
+    }
+
+    isAutomatedBackupAvailable (region) {
+        return _.includes(this.taskAvailableRegions, region);
+    }
+
+
 }
 
 angular.module("managerApp").controller("CloudProjectComputeInfrastructureListCtrl", CloudProjectComputeInfrastructureListCtrl);
