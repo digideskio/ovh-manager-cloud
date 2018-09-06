@@ -1,5 +1,8 @@
 <section class="cui-page__content">
-    <oui-datagrid data-rows="$ctrl.backups" data-row-loader="$ctrl.getInstanceName($row)">
+    <div class="text-center" data-ng-if="$ctrl.loading">
+        <oui-spinner data-size="m"></oui-spinner>
+    </div>
+    <oui-datagrid data-rows="$ctrl.backups" data-row-loader="$ctrl.getInstanceName($row)" data-ng-if="!$ctrl.loading">
         <oui-column data-title=":: 'cpc_tasks_name' | translate" data-property="backupName"></oui-column>
         <oui-column data-title=":: 'cpc_tasks_action' | translate" data-property="action"></oui-column>
         <oui-column data-title=":: 'cpc_tasks_resource' | translate" data-property="instanceName"></oui-column>
