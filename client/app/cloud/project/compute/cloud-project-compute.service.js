@@ -44,8 +44,11 @@ angular.module("managerApp")
         }
 
         deleteWorkflowBackup (serviceName, regionName, backupName) {
+            this.OvhApiCloudProjectRegionWorkflowBackup.v6().resetQueryCache();
             return this.OvhApiCloudProjectRegionWorkflowBackup.v6().delete({
                 serviceName, regionName, backupName
             }).$promise;
         }
+
+
     });

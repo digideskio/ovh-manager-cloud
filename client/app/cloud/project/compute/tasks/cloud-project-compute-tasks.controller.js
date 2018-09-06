@@ -18,6 +18,7 @@ angular.module("managerApp")
         }
 
         getRegionsWithWorkflowService () {
+            this.loading = true;
             return this.CloudProjectCompute.getRegionsWithWorkflowService(this.projectId)
                 .then(regions => {
                     this.regions = regions;
@@ -35,6 +36,9 @@ angular.module("managerApp")
                 })
                 .catch(error => {
                     this.CloudMessage.error(this.$translate.instant("cpc_tasks_instances_error", { message: _.get(error, "data.message", "") }));
+                })
+                .finally(() => {
+                    this.loading = false;
                 });
         }
 
@@ -58,7 +62,7 @@ angular.module("managerApp")
                 }
             })
                 .result.then(() => {
-                    this.backups = null;
+                    this.loading = true;
                     this.getCloudInstancesBackup();
                 });
         }
