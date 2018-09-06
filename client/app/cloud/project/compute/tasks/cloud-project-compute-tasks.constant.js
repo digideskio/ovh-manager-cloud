@@ -9,5 +9,6 @@ angular.module("managerApp")
             rotate14: {
                 rotation: 14
             }
-        }
+        },
+        onboardingKey: "CLOUD_PROJECT_TASKS_ONBOARDING"
     });

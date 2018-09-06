@@ -34,4 +34,11 @@
 
     <translation id="cpc_tasks_delete_confirm">Êtes-vous certain de vouloir supprimer cette tâche ?</translation>
     <translation id="cpc_tasks_delete_success">La tâche {{ name }} a été supprimée</translation>
+
+    <translation id="cpc_tasks_onboarding_new">Nouveau !</translation>
+    <translation id="cpc_tasks_onboarding_automated_tasks">Tâches automatisées</translation>
+    <translation id="cpc_tasks_onboarding_description_1">Description 1 qui est longue et dépasse. Lorem ipsum blablablabala</translation>
+    <translation id="cpc_tasks_onboarding_description_2">Description 2</translation>
+    <translation id="cpc_tasks_onboarding_discover">Découvrir</translation>
+    <translation id="cpc_tasks_onboarding_stop_showing">Ne plus afficher</translation>
 </translations>
