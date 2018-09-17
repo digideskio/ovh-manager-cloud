@@ -11,11 +11,12 @@ angular.module("managerApp")
         $onInit () {
             this.projectId = this.params.projectId;
             this.regionName = this.params.region;
+            this.backupId = this.params.backupId;
             this.backupName = this.params.backupName;
         }
 
         getDeletionService () {
-            return this.CloudProjectCompute.deleteWorkflowBackup(this.projectId, this.regionName, this.backupName);
+            return this.CloudProjectCompute.deleteWorkflowBackup(this.projectId, this.regionName, this.backupId);
         }
 
         deleteAutomatedBackup () {

@@ -63,7 +63,8 @@ angular.module("managerApp")
         }
 
         createTask () {
-            if (this.model.action === "snapshot") {
+            if (this.model.action.id === "snapshot") {
+                this.generateSnapshotTaskParams();
                 this.createSnapshotTask();
             }
         }
@@ -72,33 +73,31 @@ angular.module("managerApp")
             this.isCustomSchedule = this.model.schedule === "custom";
         }
 
-        generateTasksParams () {
+        generateSnapshotTaskParams () {
             if (this.isCustomSchedule) {
                 this.model.name = `${this.model.instance.name}-custom`;
             } else {
                 this.model.name = `${this.model.instance.name}-daily`;
                 this.model.rotation = _.get(this.CPC_TASKS, `defaultSchedules.${this.model.schedule}.rotation`);
-                this.model.cron = `${this.model.minutes} ${this.model.hour} * * *`;
+                const time = moment(this.model.time);
+                this.model.cron = `${time.minutes()} ${time.hours()} * * *`;
             }
         }
 
         createSnapshotTask () {
-            this.creatingLoader = true;
+            this.createLoader = true;
             return this.CloudProjectCompute.createWorkflowBackup(this.serviceName, this.model.instance.region, {
                 cron: this.model.cron,
                 instanceId: this.model.instance.id,
                 name: this.model.name,
                 rotation: this.model.rotation
             })
-                .then(() => {
-                    this.goToTasksList();
-                })
+                .then(() => this.goToTasksList())
                 .catch(error => {
-
                     this.CloudMessage.error(this.$translate.instant("cpc_tasks_create_error", { message: _.get(error, "data.message", "") }));
                 })
                 .finally(() => {
-                    this.creatingLoader = false;
+                    this.createLoader = false;
                 });
         }
 

@@ -1,0 +1,43 @@
+<oui-dropdown>
+    <oui-dropdown-trigger data-text="{{:: 'common_actions' | translate }}" data-disabled="$ctrl.loaders.vRack"></oui-dropdown-trigger>
+    <div class="oui-dropdown-menu" data-oui-dropdown-content>
+        <button type="button" class="oui-dropdown-option"
+                data-ng-click="$ctrl.addVirtualMachine()"
+                data-at-internet-click="{ name : 'cloud-project::cloud-project-compute::cloud-project-compute-infrastructure-add-virtual-machine' }"
+                data-ng-bind=":: 'cpci_add_server' | translate">
+        </button>
+        <button type="button" class="oui-dropdown-option"
+                data-ng-click="$ctrl.addVolume()"
+                data-at-internet-click="{ name : 'cloud-project::cloud-project-compute::cloud-project-compute-infrastructure-add-volume' }"
+                data-ng-bind=":: 'cpci_volume_add' | translate">
+        </button>
+        <oui-dropdown-item data-text="{{:: 'cpci_add_task' | translate }}"
+                           data-state="iaas.pci-project.compute.task.create"
+                           data-state-params="{ serviceName: $ctrl.serviceName }">
+        </oui-dropdown-item>
+        <oui-dropdown-divider></oui-dropdown-divider>
+        <oui-dropdown-item data-text="{{:: 'cpci_import_ip_failover' | translate }}"
+                           data-on-click="$ctrl.importIpFailover()">
+        </oui-dropdown-item>
+        <button type="button" class="oui-dropdown-option"
+                data-ng-click="$ctrl.InfrastructureService.buyIpFailOver()"
+                data-at-internet-click="{ name : 'cloud-project::cloud-project-compute::cloud-project-compute-infrastructure-buy-ip' }"
+                data-ng-bind=":: 'cpci_buy_ip_failover' | translate">
+        </button>
+        <oui-dropdown-divider data-ng-if="$ctrl.TARGET === 'US'"></oui-dropdown-divider>
+        <oui-dropdown-item data-text="{{:: 'cpb_vouchers_add_credit_title' | translate }}"
+                           data-on-click="$ctrl.InfrastructureService.orderCredit())"
+                           data-ng-if="$ctrl.TARGET === 'US'">
+        </oui-dropdown-item>
+        <oui-dropdown-divider></oui-dropdown-divider>
+        <button type="button" class="oui-dropdown-option"
+                data-ng-click="$ctrl.InfrastructureService.openDeleteProjectModal()"
+                data-at-internet-click="{ name : 'cloud-project::cloud-project-compute::cloud-project-compute-infrastructure-delete-project' }"
+                data-ng-bind=":: 'cpb_details_project_delete' | translate"
+                data-write-right-required>
+        </button>
+    </div>
+</oui-dropdown>
+
+
+
