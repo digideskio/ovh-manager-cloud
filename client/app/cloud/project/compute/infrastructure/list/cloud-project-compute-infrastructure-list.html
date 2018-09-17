@@ -5,57 +5,7 @@
 <div data-ng-hide="$ctrl.loaders.init">
     <div class="row mb-5">
         <div class="col-xs-3">
-            <div class="btn-group cloud-compute-infra-primary-actions">
-                <button type="button" class="oui-button oui-button_dropdown dropdown-toggle mb-0" aria-haspopup="true" aria-expanded="false"
-                        data-ng-disabled="ComputeInfrastructureDiagramCtrl.loaders.vRack"
-                        data-toggle="dropdown"
-                        write-right-required>
-                    <span data-ng-bind=":: 'common_actions' | translate"></span>
-                    <span class="oui-icon oui-icon-chevron-down" aria-hidden="true"></span>
-                </button>
-                <ul class="dropdown-menu mt-0" role="menu">
-                    <li role="menuitem">
-                        <a class="btn fs14 text-left" ui-sref="iaas.pci-project.compute.infrastructure.vm-add()"
-                           at-internet-click="{ name : 'cloud-project::cloud-project-compute::cloud-project-compute-infrastructure-add-virtual-machine' }"
-                           data-ng-bind=":: 'cpci_add_server' | translate">
-                        </a>
-                    </li>
-                    <li>
-                        <button type="button" class="btn fs14"
-                                at-internet-click="{ name : 'cloud-project::cloud-project-compute::cloud-project-compute-infrastructure-add-volume' }"
-                                data-ng-bind=":: 'cpci_volume_add' | translate"
-                                data-ng-click="$ctrl.InfrastructureService.addVolume()">
-                        </button>
-                    </li>
-                    <li class="divider" role="presentation"></li>
-                    <li>
-                        <button type="button" class="btn fs14"
-                                at-internet-click="{ name : 'cloud-project::cloud-project-compute::cloud-project-compute-infrastructure-buy-ip' }"
-                                data-ng-bind=":: 'cpci_buy_ip_failover' | translate"
-                                data-ng-click="$ctrl.InfrastructureService.buyIpFailOver()">
-                        </button>
-                    </li>
-                    <li class="divider"
-                        data-ng-if="$ctrl.TARGET === 'US'">
-                    </li>
-                    <li data-ng-if="$ctrl.TARGET === 'US'">
-                        <button type="button"
-                                class="btn fs14"
-                                data-ng-click="$ctrl.InfrastructureService.orderCredit()"
-                                data-translate="cpb_vouchers_add_credit_title">
-                        </button>
-                    </li>
-                    <li class="divider" role="presentation"></li>
-                    <li role="menuitem">
-                        <button type="button" class="btn fs14"
-                                at-internet-click="{ name : 'cloud-project::cloud-project-compute::cloud-project-compute-infrastructure-delete-project' }"
-                                data-ng-bind=":: 'cpb_details_project_delete' | translate"
-                                data-ng-click="$ctrl.InfrastructureService.openDeleteProjectModal()"
-                                write-right-required>
-                        </button>
-                    </li>
-                </ul>
-            </div>
+            <cpc-infrastructure-actions></cpc-infrastructure-actions>
         </div>
         <div class="col-xs-9 text-right">
             <div class="d-inline-block">

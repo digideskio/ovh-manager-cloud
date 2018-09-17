@@ -10,5 +10,6 @@ angular.module("managerApp")
                 rotation: 14
             }
         },
-        onboardingKey: "CLOUD_PROJECT_TASKS_ONBOARDING"
+        onboardingKey: "CLOUD_PROJECT_TASKS_ONBOARDING",
+        mistralAPILink: "https://docs.openstack.org/mistral/latest/"
     });

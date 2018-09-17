@@ -30,14 +30,17 @@ angular.module("managerApp")
         }
 
         getCloudInstancesBackup () {
+            let backupResults;
+            let errors;
             return this.$q.allSettled(_.map(this.regions, region => this.CloudProjectCompute.getWorkflowBackup(this.projectId, region)))
-                .then(backups => {
-                    this.backups = _.chain(backups).flatten().map(backup => _.set(backup, "action", "Snapshot")).value();
-                })
-                .catch(error => {
-                    this.CloudMessage.error(this.$translate.instant("cpc_tasks_instances_error", { message: _.get(error, "data.message", "") }));
-                })
+                .then(
+                    backups => { backupResults = backups; },
+                    results => {
+                        [backupResults, errors] = _.partition(results, element => !_.has(element, "status"));
+                        _.forEach(errors, error => this.CloudMessage.error(this.$translate.instant("cpc_tasks_instances_error_region", { message: _.get(error, "data.message", "") })));
+                    })
                 .finally(() => {
+                    this.backups = _.chain(backupResults).flatten().map(backup => _.set(backup, "action", "Snapshot")).value();
                     this.loading = false;
                 });
         }
@@ -48,7 +51,7 @@ angular.module("managerApp")
                 .catch(() => _.set(backup, "instanceName", this.$translate.instant("cpc_tasks_backups_instance_name_error")));
         }
 
-        deleteTask ({ region, backupName }) {
+        deleteTask ({ id, region, backupName }) {
             this.$uibModal.open({
                 templateUrl: "app/cloud/project/compute/tasks/delete/cloud-project-compute-tasks-delete.html",
                 controller: "CloudProjectComputeTasksDeleteCtrl",
@@ -57,6 +60,7 @@ angular.module("managerApp")
                     params: () => ({
                         projectId: this.projectId,
                         region,
+                        backupId: id,
                         backupName
                     })
                 }

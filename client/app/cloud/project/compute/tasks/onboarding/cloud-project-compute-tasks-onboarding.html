@@ -5,8 +5,20 @@
     <div class="oui-slideshow oui-slideshow_onboarding oui-box" data-ng-if="!$ctrl.loading">
         <div class="text-center my-auto">
             <h2 class="oui-header_2" data-translate="cpc_tasks_onboarding_new"></h2>
+            <div class="oui-slideshow-panel__text">
+                <span class="oui-icon oui-icon-clock-wait" aria-hidden="true"></span>
+            </div>
             <div class="oui-slideshow-panel__title" data-translate="cpc_tasks_onboarding_automated_tasks"></div>
-            <div class="oui-slideshow-panel__text" data-translate="cpc_tasks_onboarding_description_1"></div>
+            <div class="oui-slideshow-panel__text">
+                <span data-translate="cpc_tasks_onboarding_description_1"></span>
+                <a class="oui-button_link pl-0"
+                   href="{{:: $ctrl.CPC_TASKS.mistralAPILink }}"
+                   rel="noopener"
+                   target="_blank"
+                   data-translate="cpc_tasks_onboarding_mistral_api"
+                   data-title="{{:: 'cpc_tasks_onboarding_mistral_api' | translate }} ({{:: 'common_new_window' | translate }})">
+                </a>
+            </div>
             <div class="oui-slideshow-panel__text" data-translate="cpc_tasks_onboarding_description_2"></div>
             <oui-button data-variant="primary"
                         data-text="{{:: 'cpc_tasks_onboarding_discover' | translate}}"
