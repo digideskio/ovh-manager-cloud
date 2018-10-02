@@ -7535,10 +7535,10 @@ ovh-manager-webfont@ovh-ux/ovh-manager-webfont#^1.0.1:
   version "1.0.2"
   resolved "https://codeload.github.com/ovh-ux/ovh-manager-webfont/tar.gz/1d759c46c8c3ead4bc5e887a2336abd124a17c58"
 
-ovh-ui-angular@~2.19.0:
-  version "2.19.0"
-  resolved "https://registry.yarnpkg.com/ovh-ui-angular/-/ovh-ui-angular-2.19.0.tgz#e4396dbc46975669a81108708d5dbc45358a55fb"
-  integrity sha512-B9R0OTWwNAh3xHLPRRZeXdFc9AzAqhv8OKmmhfj5fcawRrxoQ2qEQAQo+z07WwsWIIx6UjXxfxuLb+qEVvsvFQ==
+ovh-ui-angular@2.20.0:
+  version "2.20.0"
+  resolved "https://registry.yarnpkg.com/ovh-ui-angular/-/ovh-ui-angular-2.20.0.tgz#3e6892b5401c9e53a60cfa1b019f707aef5481ec"
+  integrity sha512-KaiW4y4nH2pCWFefJvZ3vrGd+yizKNItIKV01Hk/Yv9CGk3sFsWT6g6wJXVT1z+5XiIs7sYpeOI2zIuhSNjMeQ==
   dependencies:
     angular "^1.6.x"
     angular-aria "^1.6.x"
@@ -7548,10 +7548,10 @@ ovh-ui-angular@~2.19.0:
     flatpickr "^4.5.1"
     popper.js "^1.14.3"
 
-ovh-ui-kit@~2.19.0:
-  version "2.19.0"
-  resolved "https://registry.yarnpkg.com/ovh-ui-kit/-/ovh-ui-kit-2.19.0.tgz#e9ca5304348aefad2e62e0954be1a228cca72995"
-  integrity sha512-aVXbt1CVWwKbUYzG2fS6yFh1SIHSENOIBWz0frJT8sWdWCFdoVbK6moJ6s/S2fQx//aO65tPlddByUcCEv5ofw==
+ovh-ui-kit@2.20.0:
+  version "2.20.0"
+  resolved "https://registry.yarnpkg.com/ovh-ui-kit/-/ovh-ui-kit-2.20.0.tgz#edba008b8ac9c6d884f0d5f3356df183f2acaff8"
+  integrity sha512-MIP86s6XVLGvlqPdMbG8gtZqq7AfnU4QLsjozYZGdwxuh8R0Mk2HwDPLs2wKByhiHJjk8JN3/cDtWuy6g+rfAg==
   dependencies:
     less-plugin-remcalc "^0.1.0"
 
