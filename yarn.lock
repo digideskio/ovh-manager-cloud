@@ -1319,7 +1319,7 @@ angular-animate@~1.6:
   resolved "https://registry.yarnpkg.com/angular-animate/-/angular-animate-1.6.10.tgz#c520f6d341370e34e0a62060c99bcf47b7d7db8c"
   integrity sha512-RU9ZJbTspq0W0x675H5k1DeSgKbAFfp2aiYoNGdlD+wQNKvwwMR5ho+EkDKkx9zE02a5goe8Z6EhhYPQSff9dA==
 
-angular-aria@^1.6.x:
+angular-aria@>=1.6.x:
   version "1.7.4"
   resolved "https://registry.yarnpkg.com/angular-aria/-/angular-aria-1.7.4.tgz#0774cefa3a3e1bf0bf7aba5253e3bb9ca209f216"
   integrity sha512-nmZ7xjvVMm1PVEvJ360gJQqEF4FGRdTFWZtDOE4+uHGZZlVJeCEcsrnZCONX4qyK3rrRHUFSHZc1OV8+heGrhw==
@@ -1390,7 +1390,7 @@ angular-sanitize@1.3.x:
   resolved "http://registry.npmjs.org/angular-sanitize/-/angular-sanitize-1.3.20.tgz#5b1caa4176b8db2039d7d1c1527537a61be3cd67"
   integrity sha1-WxyqQXa42yA519HBUnU3phvjzWc=
 
-angular-sanitize@^1.6.x:
+angular-sanitize@>=1.6.x:
   version "1.7.4"
   resolved "https://registry.yarnpkg.com/angular-sanitize/-/angular-sanitize-1.7.4.tgz#c7d80176ed31507fd0e08bbb3a6c25bf09db2a61"
   integrity sha512-i5NoK6lo21N/CDRtkXpUuqaXeyncP7icLNCGzCUCD6CQvfVh3nY9Nsiw+tHtiIeD34ppcbl5Wb6ihY7RKDoDVw==
@@ -1460,7 +1460,7 @@ angular-websocket@^2.0.0:
     angular "*"
     ws "^1.0.0"
 
-angular@*, angular@1.x, "angular@>=1.2.26 <=1.7", angular@^1.6.x:
+angular@*, angular@1.x, "angular@>=1.2.26 <=1.7", angular@>=1.6.x:
   version "1.7.4"
   resolved "https://registry.yarnpkg.com/angular/-/angular-1.7.4.tgz#c1bf4884c2d470c06907737a1bf0835a9f646f31"
   integrity sha512-nYTWc9CpZjTY57l8EA1+DGpQNzI6HewQ34bfRYoGXBYysIoPYjfcgTGWC+Vl3AaeCnhAb3VTkysVESvCBpUIoA==
@@ -4232,7 +4232,7 @@ flatmap-stream@^0.1.0:
   resolved "https://registry.yarnpkg.com/flatmap-stream/-/flatmap-stream-0.1.0.tgz#ed54e01422cd29281800914fcb968d58b685d5f1"
   integrity sha512-Nlic4ZRYxikqnK5rj3YoxDVKGGtUjcNDUtvQ7XsdGLZmMwdUYnXf10o1zcXtzEZTBgc6GxeRpQxV/Wu3WPIIHA==
 
-flatpickr@^4.5.1:
+flatpickr@^4.5.2:
   version "4.5.2"
   resolved "https://registry.yarnpkg.com/flatpickr/-/flatpickr-4.5.2.tgz#47c8ad472a096e5fb7e74b809b0703535383f20d"
   integrity sha512-jDy4QYGpmiy7+Qk8QvKJ4spjDdxcx9cxMydmq1x427HkKWBw0qizLYeYM2F6tMcvvqGjU5VpJS55j4LnsaBblA==
@@ -7535,23 +7535,31 @@ ovh-manager-webfont@ovh-ux/ovh-manager-webfont#^1.0.1:
   version "1.0.2"
   resolved "https://codeload.github.com/ovh-ux/ovh-manager-webfont/tar.gz/1d759c46c8c3ead4bc5e887a2336abd124a17c58"
 
-ovh-ui-angular@2.20.0:
-  version "2.20.0"
-  resolved "https://registry.yarnpkg.com/ovh-ui-angular/-/ovh-ui-angular-2.20.0.tgz#3e6892b5401c9e53a60cfa1b019f707aef5481ec"
-  integrity sha512-KaiW4y4nH2pCWFefJvZ3vrGd+yizKNItIKV01Hk/Yv9CGk3sFsWT6g6wJXVT1z+5XiIs7sYpeOI2zIuhSNjMeQ==
+ovh-ui-angular@2.20.1:
+  version "2.20.1"
+  resolved "https://registry.yarnpkg.com/ovh-ui-angular/-/ovh-ui-angular-2.20.1.tgz#5646516f3b3cefeabd8cf9ab9edb49daf3213efe"
+  integrity sha512-742l4ADbCa3tjzp6/vStaoDZeW/7c02Hvn+uxpsIOEMyQIi1inA+JbkGxCzsGvNxWn2X805nyAamfS4RR11asw==
   dependencies:
-    angular "^1.6.x"
-    angular-aria "^1.6.x"
-    angular-sanitize "^1.6.x"
+    angular ">=1.6.x"
+    angular-aria ">=1.6.x"
+    angular-sanitize ">=1.6.x"
     clipboard "^2.0.1"
     escape-string-regexp "^1.0.5"
-    flatpickr "^4.5.1"
-    popper.js "^1.14.3"
+    flatpickr "^4.5.2"
+    ovh-ui-kit "^2.20.0"
+    popper.js "^1.14.4"
 
-ovh-ui-kit@2.20.0:
-  version "2.20.0"
-  resolved "https://registry.yarnpkg.com/ovh-ui-kit/-/ovh-ui-kit-2.20.0.tgz#edba008b8ac9c6d884f0d5f3356df183f2acaff8"
-  integrity sha512-MIP86s6XVLGvlqPdMbG8gtZqq7AfnU4QLsjozYZGdwxuh8R0Mk2HwDPLs2wKByhiHJjk8JN3/cDtWuy6g+rfAg==
+ovh-ui-kit@2.20.1:
+  version "2.20.1"
+  resolved "https://registry.yarnpkg.com/ovh-ui-kit/-/ovh-ui-kit-2.20.1.tgz#26c67dda838a142f7d439b43efe6dfb7f24e725e"
+  integrity sha512-XUIHBL1HwmUxWadpqXzuKv8Th78F4B/KoSaRmuqgHM371S9ZDaE5L2hefUW3oWfNtTzPqvocdtwS6pU4rmT6xw==
+  dependencies:
+    less-plugin-remcalc "^0.1.0"
+
+ovh-ui-kit@^2.20.0:
+  version "2.20.2"
+  resolved "https://registry.yarnpkg.com/ovh-ui-kit/-/ovh-ui-kit-2.20.2.tgz#63715e743e0299cb2c8d2624211d0f8c6cf82e5e"
+  integrity sha512-V4p7gRNmbTY6xsjGeT+85xA85tXb6EOMlUCjyB6yoh4bMokGNb4g0+bYlme47p2XUGOHzCyxKIylt0CE9GAAHQ==
   dependencies:
     less-plugin-remcalc "^0.1.0"
 
@@ -7867,7 +7875,7 @@ pluralize@^7.0.0:
   resolved "https://registry.yarnpkg.com/pluralize/-/pluralize-7.0.0.tgz#298b89df8b93b0221dbf421ad2b1b1ea23fc6777"
   integrity sha512-ARhBOdzS3e41FbkW/XWrTEtukqqLoK5+Z/4UeDaLuSW+39JPeFgs4gCGqsrJHVZX0fUrx//4OF0K1CUGwlIFow==
 
-popper.js@^1.14.1, popper.js@^1.14.3:
+popper.js@^1.14.1, popper.js@^1.14.4:
   version "1.14.4"
   resolved "https://registry.yarnpkg.com/popper.js/-/popper.js-1.14.4.tgz#8eec1d8ff02a5a3a152dd43414a15c7b79fd69b6"
   integrity sha1-juwdj/AqWjoVLdQ0FKFce3n9abY=
