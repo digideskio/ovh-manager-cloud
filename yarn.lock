@@ -6135,9 +6135,9 @@ ovh-angular-user-pref@ovh-ux/ovh-angular-user-pref#^0.3.1:
   version "0.3.1"
   resolved "https://codeload.github.com/ovh-ux/ovh-angular-user-pref/tar.gz/71d0b3c0606a2e2052505bda2a8e2ff06b0156e1"
 
-"ovh-api-services@https://github.com/ovh-ux/ovh-api-services.git#feat/hosting-private-database":
+"ovh-api-services@git+https://github.com/ovh-ux/ovh-api-services#build/hosting-private-database":
   version "3.16.0"
-  resolved "https://github.com/ovh-ux/ovh-api-services.git#30bb9115e45287351dc366e978e565e286f76e3f"
+  resolved "git+https://github.com/ovh-ux/ovh-api-services#d010b43b4829bfaecda7e55bb08003e4c3b5cf16"
   dependencies:
     grunt-injector "^0.6.0"
 
